@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03 Fetch</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/fontawesome.min.css">
+    <style>
+        hr,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+        }
+
+        .avatar {
+            height: 80px;
+            width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5">
+        <div class="vstack gap-3">
+            <h1 class="mb-3">Ejemplo con fetch</h1>
+            <hr>
+            <h3>Usuarios</h3>
+            <div>
+                <div class="row g-3" id="listContainer">
+                    <div class="col-md-6 col-xl-4">
+                        <div class="card shadow w-100">
+                            <div class="card-body">
+                                <div class="row g-3">
+                                    <div class="col">
+                                        <div class="vstack gap-2">
+                                            <h6>$first_name $last_name</h6>
+                                            <span class="text-muted">$email</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button class="btn btn-primary" onclick="showUser($id)">
+                                            <i class="fas fa-eye"></i>&nbsp;Detalles
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" id="userModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="itemContainer">
+                    <div class="row g-3 align-items-center mb-3">
+                        <div class="col-auto">
+                            <img class="avatar" src="$avatar" alt="avatar">
+                        </div>
+                        <div class="col">
+                            <div class="row gap-3">
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="text-muted">Nombre</label>
+                                    <h6>$first_name</h6>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="text-muted">Apellido</label>
+                                    <h6>$last_name</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gap-3">
+                        <div class="col-md-6 col-lg-4">
+                            <label class="text-muted">Id</label>
+                            <h6>$id</h6>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <label class="text-muted">Correo electrónico</label>
+                            <h6>$email</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./03-fetch.js"></script>
+</body>
+
+</html>
